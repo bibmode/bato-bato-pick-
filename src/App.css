@@ -6,4 +6,8 @@
   min-height: 100vh;
   text-transform: uppercase;
   line-height: 1.6;
+  padding-inline: 3.5rem;
+
+  display: flex;
+  flex-direction: column;
 }
