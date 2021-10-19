@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   width: 100%;
@@ -55,7 +56,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Attack = styled.button`
+export const Attack = styled(motion.button)`
   position: absolute;
   width: 8.5rem;
   height: 8.5rem;
@@ -65,6 +66,7 @@ export const Attack = styled.button`
   border-radius: 50%;
   outline: none;
   border: none;
+  cursor: pointer;
 
   div {
     width: 76%;
