@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-family: "Barlow Semi Condensed", sans-serif;
-  background-image: radial-gradient(circle at top, #1f3756, #141539);
+  background-image: radial-gradient(circle at top, #1f3756 40%, #141539);
   width: 100%;
   min-height: 100vh;
   text-transform: uppercase;
