@@ -9,7 +9,7 @@ export const Container = styled.div`
   height: 10rem;
 `;
 
-export const Button = styled(motion.button)`
+export const Button = styled.button`
   font-family: inherit;
   text-transform: uppercase;
   padding: 0.8rem 4rem;
@@ -23,9 +23,9 @@ export const Button = styled(motion.button)`
   transition: all ease-in-out 0.3s;
   height: fit-content;
 
-  /* :hover {
+  :hover {
     background-color: #eee;
     color: hsl(229, 25%, 31%);
     transform: scale(1.1);
-  } */
+  }
 `;
