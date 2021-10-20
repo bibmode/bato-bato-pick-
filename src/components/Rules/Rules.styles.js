@@ -7,6 +7,9 @@ export const Container = styled.div`
   justify-content: center;
   align-items: flex-end;
   height: 10rem;
+  position: fixed;
+  bottom: 5rem;
+  left: 0;
 `;
 
 export const Button = styled.button`

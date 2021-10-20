@@ -54,7 +54,7 @@ function App() {
 
   useEffect(() => {
     if (winner === true) setScore(score + 1);
-    if (winner === false) setScore(score - 1);
+    else if (winner === false) setScore(score - 1);
   }, [winner, computer]);
 
   return (
