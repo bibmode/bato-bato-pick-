@@ -7,7 +7,7 @@ const attackVariants = {
     transition: {
       duration: 0.2,
       type: "spring",
-      stiffness: 500,
+      stiffness: 300,
     },
   },
 };
