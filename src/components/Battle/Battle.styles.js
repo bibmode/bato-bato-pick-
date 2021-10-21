@@ -9,6 +9,7 @@ export const Container = styled(motion.div)`
   justify-content: space-between;
   color: #eee;
   margin-top: 5rem;
+  z-index: 100;
 `;
 
 export const PickWrapper = styled.div`

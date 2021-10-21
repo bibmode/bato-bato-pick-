@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Pentagon from "./components/Pentagon";
 import Rules from "./components/Rules";
@@ -14,9 +14,12 @@ function App() {
   const [modal, setModal] = useState(false);
   const [winner, setWinner] = useState(null);
   const [choice, setChoice] = useState(null);
+  const [pentagon, setPentagon] = useState(true);
   const [computer, setComputer] = useState(
     choices[Math.floor(Math.random() * 5)]
   );
+
+  const location = useLocation();
 
   const showModal = () => {
     setModal(!modal);
@@ -61,13 +64,23 @@ function App() {
     <div className="App">
       <Modal showModal={showModal} modal={modal} />
       <Header score={score} />
-      <AnimatePresence exitBeforeEnter>
-        <Switch>
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Switch location={location} key={location.pathname}>
           <Route path="/battle">
-            <Battle user={choice} computer={computer} winner={winner} />
+            <Battle
+              setPentagon={() => setPentagon(!pentagon)}
+              user={choice}
+              computer={computer}
+              winner={winner}
+            />
           </Route>
           <Route path="/">
-            <Pentagon getWinner={getWinner} setChoice={setChoice} />
+            <Pentagon
+              setPentagon={() => setPentagon(!pentagon)}
+              pentagon={pentagon}
+              getWinner={getWinner}
+              setChoice={setChoice}
+            />
           </Route>
         </Switch>
       </AnimatePresence>

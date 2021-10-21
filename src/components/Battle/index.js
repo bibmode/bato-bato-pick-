@@ -13,13 +13,26 @@ const containerVariants = {
       duration: 0.6,
     },
   },
+  exit: {
+    x: -300,
+    opacity: 0,
+    scale: [1, 0.5],
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
-const Battle = ({ user, computer, winner }) => {
+const Battle = ({ user, computer, winner, setPentagon }) => {
   const history = useHistory();
 
   return (
-    <Container variants={containerVariants} initial="hidden" animate="visible">
+    <Container
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <PickWrapper>
         <Pick>
           <Attack className={user}>
@@ -41,7 +54,14 @@ const Battle = ({ user, computer, winner }) => {
 
       <Results>
         <h2>{winner ? "You win" : winner === false ? "You lose" : "Draw"}</h2>
-        <button onClick={() => history.push("/")}>Play again</button>
+        <button
+          onClick={() => {
+            history.push("/");
+            setPentagon();
+          }}
+        >
+          Play again
+        </button>
       </Results>
     </Container>
   );
