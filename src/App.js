@@ -56,8 +56,15 @@ function App() {
   };
 
   useEffect(() => {
-    if (winner === true) setScore(score + 1);
-    else if (winner === false) setScore(score - 1);
+    if (winner === true) {
+      setTimeout(() => {
+        setScore(score + 1);
+      }, 3500);
+    } else if (winner === false) {
+      setTimeout(() => {
+        setScore(score - 1);
+      }, 3500);
+    }
   }, [winner, computer]);
 
   return (

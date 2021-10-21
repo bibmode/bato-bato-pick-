@@ -25,12 +25,15 @@ export const Pick = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   margin-inline: -1rem -1.5rem;
+  position: relative;
+  z-index: 10;
 
   h3 {
     margin-top: 2rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     font-size: 1.6rem;
+    z-index: 100;
   }
 
   .spock {
@@ -55,6 +58,13 @@ export const Pick = styled(motion.div)`
   }
 `;
 
+export const AttackDiv = styled(motion.div)`
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+`;
+
 export const Attack = styled(motion.div)`
   width: 13rem;
   height: 13rem;
@@ -64,8 +74,9 @@ export const Attack = styled(motion.div)`
   border-radius: 50%;
   outline: none;
   border: none;
+  z-index: initial;
 
-  div {
+  .image {
     width: 76%;
     height: 76%;
     background-color: #eee;
@@ -85,13 +96,25 @@ export const Attack = styled(motion.div)`
 export const Plate = styled(motion.div)`
   width: 13rem;
   height: 13rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
-  outline: none;
-  border: none;
   background-color: rgba(20, 21, 57, 0.5);
+`;
+
+export const Backdrop = styled(motion.div)`
+  width: 1rem;
+  position: absolute;
+  top: 48%;
+`;
+
+export const PlayerBackdrop = styled(motion.div)`
+  width: ${(props) => props.size};
+  height: ${(props) => props.size};
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(96, 110, 133, 0.1);
+  z-index: -1;
+  margin: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Results = styled(motion.div)`

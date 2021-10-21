@@ -1,10 +1,13 @@
 import {
   Attack,
+  AttackDiv,
   Container,
   Pick,
   PickWrapper,
   Plate,
+  PlayerBackdrop,
   Results,
+  Backdrop,
 } from "./Battle.styles";
 import { useHistory } from "react-router";
 import { useEffect, useState } from "react";
@@ -24,9 +27,12 @@ const containerVariants = {
   },
   exit: {
     x: "-100vw",
-    scale: [1, 0.5],
+    opacity: 0,
+    scale: [1, 0.8, 1],
     transition: {
-      duration: 0.5,
+      duration: 0.8,
+      type: "tween",
+      ease: "backInOut",
     },
   },
 };
@@ -54,6 +60,32 @@ const resultVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
+    },
+  },
+};
+
+const backdropVariants = {
+  initial: {
+    opacity: 1,
+  },
+  active: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const backVariants = {
+  initial: {
+    opacity: 0,
+  },
+  active: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      yoyo: Infinity,
+      ease: "easeInOut",
     },
   },
 };
@@ -86,33 +118,84 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
       <PickWrapper>
         <Pick>
           {showFirst ? (
-            <Attack
-              variants={attackVariants}
-              initial="initial"
-              animate="active"
-              className={user}
-            >
-              <div>
-                <img src={`images/icon-${user}.svg`} alt={user} />
-              </div>
-            </Attack>
+            <AttackDiv>
+              <Attack
+                variants={attackVariants}
+                initial="initial"
+                animate="active"
+                className={user}
+              >
+                <div className="image">
+                  <img src={`images/icon-${user}.svg`} alt={user} />
+                </div>
+              </Attack>
+              {winner && (
+                <Backdrop
+                  variants={backdropVariants}
+                  initial="initial"
+                  animate="active"
+                >
+                  <PlayerBackdrop
+                    key={1}
+                    variants={backVariants}
+                    size="17rem"
+                  />
+                  <PlayerBackdrop
+                    key={2}
+                    variants={backVariants}
+                    size="22rem"
+                  />
+                  <PlayerBackdrop
+                    key={3}
+                    variants={backVariants}
+                    size="28rem"
+                  />
+                </Backdrop>
+              )}
+            </AttackDiv>
           ) : (
             <Plate />
           )}
+
           <h3>you picked</h3>
         </Pick>
         <Pick className="computer">
           {showSecond ? (
-            <Attack
-              variants={attackVariants}
-              initial="initial"
-              animate="active"
-              className={computer}
-            >
-              <div>
-                <img src={`images/icon-${computer}.svg`} alt={computer} />
-              </div>
-            </Attack>
+            <AttackDiv>
+              <Attack
+                variants={attackVariants}
+                initial="initial"
+                animate="active"
+                className={computer}
+              >
+                <div className="image">
+                  <img src={`images/icon-${computer}.svg`} alt={computer} />
+                </div>
+              </Attack>
+              {!winner && (
+                <Backdrop
+                  variants={backdropVariants}
+                  initial="initial"
+                  animate="active"
+                >
+                  <PlayerBackdrop
+                    key={4}
+                    variants={backVariants}
+                    size="17rem"
+                  />
+                  <PlayerBackdrop
+                    key={5}
+                    variants={backVariants}
+                    size="22rem"
+                  />
+                  <PlayerBackdrop
+                    key={6}
+                    variants={backVariants}
+                    size="28rem"
+                  />
+                </Backdrop>
+              )}
+            </AttackDiv>
           ) : (
             <Plate />
           )}
