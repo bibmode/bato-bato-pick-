@@ -64,7 +64,7 @@ function App() {
     <div className="App">
       <Modal showModal={showModal} modal={modal} />
       <Header score={score} />
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/battle">
             <Battle

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container, ScoreCard, Wrapper } from "./Header.styles";
 
 const Header = ({ score }) => {

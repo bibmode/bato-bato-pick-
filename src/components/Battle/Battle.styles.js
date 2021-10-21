@@ -12,7 +12,7 @@ export const Container = styled(motion.div)`
   z-index: 100;
 `;
 
-export const PickWrapper = styled.div`
+export const PickWrapper = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -64,7 +64,6 @@ export const Attack = styled(motion.div)`
   border-radius: 50%;
   outline: none;
   border: none;
-  cursor: pointer;
 
   div {
     width: 76%;
@@ -83,7 +82,19 @@ export const Attack = styled(motion.div)`
   }
 `;
 
-export const Results = styled.div`
+export const Plate = styled(motion.div)`
+  width: 13rem;
+  height: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: rgba(20, 21, 57, 0.5);
+`;
+
+export const Results = styled(motion.div)`
   width: 100%;
   margin-top: 3rem;
 
