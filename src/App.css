@@ -3,7 +3,7 @@
   font-family: "Barlow Semi Condensed", sans-serif;
   background-image: radial-gradient(circle at top, #1f3756 40%, #141539);
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   text-transform: uppercase;
   line-height: 1.6;
   /* padding-inline: min(8%, 10rem); */

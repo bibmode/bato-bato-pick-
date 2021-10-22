@@ -8,6 +8,7 @@ import { useState } from "react";
 import Battle from "./components/Battle";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react/cjs/react.development";
+import Background from "./components/Background";
 
 function App() {
   const localScore = Number(localStorage.getItem("score"));
@@ -62,6 +63,7 @@ function App() {
   return (
     <div className="App">
       <Modal showModal={showModal} modal={modal} />
+      {modal && <Background />}
       <Header score={score} />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
