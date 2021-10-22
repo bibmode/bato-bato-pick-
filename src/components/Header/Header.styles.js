@@ -13,10 +13,10 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(100%, 60rem);
+  width: min(100%, 70rem);
 
   img {
-    width: clamp(5.2rem, 10vw, 8rem);
+    width: clamp(5.2rem, 10vw, 9.5rem);
     margin-left: 2rem;
     margin-block: 1.5rem;
   }
@@ -34,13 +34,13 @@ export const ScoreCard = styled.div`
   }
 
   h3 {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.1rem, 2vw, 1.8rem);
     letter-spacing: 0.2rem;
     color: hsl(229, 64%, 46%);
   }
 
   h2 {
-    font-size: clamp(4.2rem, 5vw, 4.8rem);
+    font-size: clamp(4.2rem, 5vw, 4.9rem);
     color: #3b4262;
     line-height: 1;
     margin-top: -0.3rem;

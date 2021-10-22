@@ -9,7 +9,13 @@ export const Container = styled(motion.div)`
   height: 10rem;
   position: fixed;
   bottom: 5rem;
-  left: 0;
+
+  @media only screen and (min-width: 37.5em) {
+    width: fit-content;
+    position: absolute;
+    right: 3rem;
+    bottom: 3.5rem;
+  }
 `;
 
 export const Button = styled.button`
