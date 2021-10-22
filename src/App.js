@@ -4,13 +4,15 @@ import Header from "./components/Header";
 import Pentagon from "./components/Pentagon";
 import Rules from "./components/Rules";
 import Modal from "./components/Modal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Battle from "./components/Battle";
 import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react/cjs/react.development";
 
 function App() {
+  const localScore = Number(localStorage.getItem("score"));
   const choices = ["spock", "scissors", "paper", "rock", "lizard"];
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(localScore ? localScore : 0);
   const [modal, setModal] = useState(false);
   const [winner, setWinner] = useState(null);
   const [choice, setChoice] = useState(0);
@@ -18,6 +20,10 @@ function App() {
   const [computer, setComputer] = useState(
     choices[Math.floor(Math.random() * 5)]
   );
+
+  useEffect(() => {
+    console.log(localScore, typeof localScore);
+  }, []);
 
   const location = useLocation();
 
@@ -30,10 +36,10 @@ function App() {
     setTimeout(() => {
       champ === 1
         ? setScore(score + 1)
-        : champ === 2 && score !== 0
+        : champ === 2
         ? setScore(score - 1)
         : setScore(score);
-    }, 3800);
+    }, 3000);
   };
 
   const getWinner = (pick, enemy) => {
@@ -51,6 +57,11 @@ function App() {
       scoreTally(1);
     else scoreTally(2);
   };
+
+  // local storage
+  useEffect(() => {
+    localStorage.setItem("score", score);
+  }, [score]);
 
   return (
     <div className="App">

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Container, Rules } from "./Modal.styles";
 import { AnimatePresence } from "framer-motion";
 

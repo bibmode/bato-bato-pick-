@@ -10,7 +10,7 @@ import {
   Backdrop,
 } from "./Battle.styles";
 import { useHistory } from "react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const containerVariants = {
   hidden: {
@@ -59,7 +59,7 @@ const resultVariants = {
   active: {
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
     },
   },
 };
@@ -71,7 +71,7 @@ const backdropVariants = {
   active: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.4,
     },
   },
 };
@@ -85,7 +85,7 @@ const backVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 1.2,
+      duration: 1,
       repeat: Infinity,
       repeatType: "reverse",
       type: "tween",
@@ -105,11 +105,11 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
 
   setTimeout(() => {
     setShowSecond(true);
-  }, 1500);
+  }, 1200);
 
   setTimeout(() => {
     setShowResults(true);
-  }, 2500);
+  }, 2300);
 
   return (
     <Container
