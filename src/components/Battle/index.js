@@ -71,7 +71,7 @@ const backdropVariants = {
   active: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -79,13 +79,16 @@ const backdropVariants = {
 const backVariants = {
   initial: {
     opacity: 0,
+    scale: 0.8,
   },
   active: {
     opacity: 1,
+    scale: 1,
     transition: {
-      duration: 1,
-      yoyo: Infinity,
-      ease: "easeInOut",
+      duration: 1.2,
+      repeat: Infinity,
+      repeatType: "reverse",
+      type: "tween",
     },
   },
 };
@@ -129,7 +132,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                   <img src={`images/icon-${user}.svg`} alt={user} />
                 </div>
               </Attack>
-              {winner === 1 && (
+              {winner === 1 && showResults && (
                 <Backdrop
                   variants={backdropVariants}
                   initial="initial"
@@ -139,11 +142,13 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                     key={1}
                     variants={backVariants}
                     size="17rem"
+                    className="first"
                   />
                   <PlayerBackdrop
                     key={2}
                     variants={backVariants}
                     size="22rem"
+                    className="second"
                   />
                   <PlayerBackdrop
                     key={3}
@@ -172,7 +177,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                   <img src={`images/icon-${computer}.svg`} alt={computer} />
                 </div>
               </Attack>
-              {winner === 2 && (
+              {winner === 2 && showResults && (
                 <Backdrop
                   variants={backdropVariants}
                   initial="initial"
@@ -182,11 +187,13 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                     key={4}
                     variants={backVariants}
                     size="17rem"
+                    className="first"
                   />
                   <PlayerBackdrop
                     key={5}
                     variants={backVariants}
                     size="22rem"
+                    className="second"
                   />
                   <PlayerBackdrop
                     key={6}

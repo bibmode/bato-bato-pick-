@@ -26,7 +26,6 @@ export const Pick = styled(motion.div)`
   flex-direction: column;
   margin-inline: -1rem -1.5rem;
   position: relative;
-  z-index: 10;
 
   h3 {
     margin-top: 2rem;
@@ -74,7 +73,7 @@ export const Attack = styled(motion.div)`
   border-radius: 50%;
   outline: none;
   border: none;
-  z-index: initial;
+  z-index: 300;
 
   .image {
     width: 76%;
@@ -101,9 +100,12 @@ export const Plate = styled(motion.div)`
 `;
 
 export const Backdrop = styled(motion.div)`
-  width: 1rem;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const PlayerBackdrop = styled(motion.div)`
@@ -111,10 +113,8 @@ export const PlayerBackdrop = styled(motion.div)`
   height: ${(props) => props.size};
   position: absolute;
   border-radius: 50%;
-  background-color: rgba(96, 110, 133, 0.1);
+  background-color: rgba(96, 110, 133, 0.15);
   z-index: -1;
-  margin: 50%;
-  transform: translate(-50%, -50%);
 `;
 
 export const Results = styled(motion.div)`
