@@ -13,7 +13,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [modal, setModal] = useState(false);
   const [winner, setWinner] = useState(null);
-  const [choice, setChoice] = useState(null);
+  const [choice, setChoice] = useState(0);
   const [pentagon, setPentagon] = useState(true);
   const [computer, setComputer] = useState(
     choices[Math.floor(Math.random() * 5)]
@@ -25,47 +25,22 @@ function App() {
     setModal(!modal);
   };
 
-  const getWinner = (choice) => {
-    const randomNum = Math.floor(Math.random() * 5);
-    setComputer(choices[randomNum]);
-
-    if (choice === computer) {
-      setWinner(null);
-    } else {
-      if (choice === "spock") {
-        if (computer === "scissors" || computer === "rock") setWinner(true);
-        else setWinner(false);
-      }
-      if (choice === "scissors") {
-        if (computer === "paper" || computer === "lizard") setWinner(true);
-        else setWinner(false);
-      }
-      if (choice === "paper") {
-        if (computer === "rock" || computer === "spock") setWinner(true);
-        else setWinner(false);
-      }
-      if (choice === "rock") {
-        if (computer === "scissors" || computer === "lizard") setWinner(true);
-        else setWinner(false);
-      }
-      if (choice === "lizard") {
-        if (computer === "spock" || computer === "paper") setWinner(true);
-        else setWinner(false);
-      }
-    }
+  const getWinner = (pick, enemy) => {
+    if (pick === enemy) {
+      setWinner(3);
+    } else if (pick === "spock" && (enemy === "scissors" || enemy === "rock"))
+      setWinner(1);
+    else if (pick === "scissors" && (enemy === "paper" || enemy === "lizard"))
+      setWinner(1);
+    else if (pick === "paper" && (enemy === "rock" || enemy === "spock"))
+      setWinner(1);
+    else if (pick === "rock" && (enemy === "scissors" || enemy === "lizard"))
+      setWinner(1);
+    else if (pick === "lizard" && (enemy === "spock" || enemy === "paper"))
+      setWinner(1);
+    else setWinner(2);
+    console.log(pick, enemy);
   };
-
-  useEffect(() => {
-    if (winner === true) {
-      setTimeout(() => {
-        setScore(score + 1);
-      }, 3500);
-    } else if (winner === false) {
-      setTimeout(() => {
-        setScore(score - 1);
-      }, 3500);
-    }
-  }, [winner, computer]);
 
   return (
     <div className="App">
@@ -87,6 +62,8 @@ function App() {
               pentagon={pentagon}
               getWinner={getWinner}
               setChoice={setChoice}
+              setComputer={setComputer}
+              enemy={computer}
             />
           </Route>
         </Switch>

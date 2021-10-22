@@ -41,9 +41,11 @@ const containerVariants = {
   },
 };
 
-const Pentagon = ({ getWinner, setChoice }) => {
+const Pentagon = ({ getWinner, setChoice, enemy, setComputer }) => {
   const attacks = ["spock", "scissors", "paper", "rock", "lizard"];
   const history = useHistory();
+  const randomNum = Math.floor(Math.random() * 5);
+  setComputer(attacks[randomNum]);
 
   return (
     <Container
@@ -60,7 +62,7 @@ const Pentagon = ({ getWinner, setChoice }) => {
             variants={attackVariants}
             whileTap="tap"
             onClick={() => {
-              getWinner(attack);
+              getWinner(attack, enemy);
               setChoice(attack);
               history.push("/battle");
             }}

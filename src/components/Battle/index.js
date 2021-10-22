@@ -129,7 +129,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                   <img src={`images/icon-${user}.svg`} alt={user} />
                 </div>
               </Attack>
-              {winner && (
+              {winner === 1 && (
                 <Backdrop
                   variants={backdropVariants}
                   initial="initial"
@@ -172,7 +172,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                   <img src={`images/icon-${computer}.svg`} alt={computer} />
                 </div>
               </Attack>
-              {!winner && (
+              {winner === 2 && (
                 <Backdrop
                   variants={backdropVariants}
                   initial="initial"
@@ -205,7 +205,9 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
 
       {showResults && (
         <Results variants={resultVariants} initial="initial" animate="active">
-          <h2>{winner ? "You win" : winner === false ? "You lose" : "Draw"}</h2>
+          <h2>
+            {winner === 1 ? "You win" : winner === 2 ? "You lose" : "Draw"}
+          </h2>
           <button
             onClick={() => {
               history.push("/");
