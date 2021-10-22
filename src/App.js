@@ -63,7 +63,7 @@ function App() {
   return (
     <div className="App">
       <Modal showModal={showModal} modal={modal} />
-      {modal && <Background />}
+      {modal && <Background showModal={showModal} />}
       <Header score={score} />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
