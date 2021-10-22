@@ -25,21 +25,31 @@ function App() {
     setModal(!modal);
   };
 
+  const scoreTally = (champ) => {
+    setWinner(champ);
+    setTimeout(() => {
+      champ === 1
+        ? setScore(score + 1)
+        : champ === 2 && score !== 0
+        ? setScore(score - 1)
+        : setScore(score);
+    }, 3800);
+  };
+
   const getWinner = (pick, enemy) => {
     if (pick === enemy) {
       setWinner(3);
     } else if (pick === "spock" && (enemy === "scissors" || enemy === "rock"))
-      setWinner(1);
+      scoreTally(1);
     else if (pick === "scissors" && (enemy === "paper" || enemy === "lizard"))
-      setWinner(1);
+      scoreTally(1);
     else if (pick === "paper" && (enemy === "rock" || enemy === "spock"))
-      setWinner(1);
+      scoreTally(1);
     else if (pick === "rock" && (enemy === "scissors" || enemy === "lizard"))
-      setWinner(1);
+      scoreTally(1);
     else if (pick === "lizard" && (enemy === "spock" || enemy === "paper"))
-      setWinner(1);
-    else setWinner(2);
-    console.log(pick, enemy);
+      scoreTally(1);
+    else scoreTally(2);
   };
 
   return (

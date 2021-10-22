@@ -71,7 +71,7 @@ const backdropVariants = {
   active: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.5,
     },
   },
 };
