@@ -21,10 +21,6 @@ function App() {
     choices[Math.floor(Math.random() * 5)]
   );
 
-  useEffect(() => {
-    console.log(localScore, typeof localScore);
-  }, []);
-
   const location = useLocation();
 
   const showModal = () => {

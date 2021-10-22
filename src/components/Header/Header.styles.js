@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding-block: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 `;
 
 export const Wrapper = styled.div`
@@ -10,10 +13,12 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: min(100%, 60rem);
 
   img {
-    width: 5.2rem;
+    width: clamp(5.2rem, 10vw, 8rem);
     margin-left: 2rem;
+    margin-block: 1.5rem;
   }
 `;
 
@@ -23,14 +28,19 @@ export const ScoreCard = styled.div`
   margin: 1rem;
   border-radius: 0.5rem;
 
+  @media only screen and (min-width: 37.5em) {
+    margin-right: 2rem;
+    padding: 0.8rem 3rem;
+  }
+
   h3 {
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     letter-spacing: 0.2rem;
     color: hsl(229, 64%, 46%);
   }
 
   h2 {
-    font-size: 4.2rem;
+    font-size: clamp(4.2rem, 5vw, 4.8rem);
     color: #3b4262;
     line-height: 1;
     margin-top: -0.3rem;
