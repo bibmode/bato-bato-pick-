@@ -12,7 +12,7 @@ const Modal = ({ showModal, modal }) => {
           opacity: 0,
         },
         visible: {
-          y: "20%",
+          y: "20vh",
           x: "-50%",
           opacity: 1,
           transition: {

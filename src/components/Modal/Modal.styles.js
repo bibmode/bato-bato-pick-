@@ -14,10 +14,10 @@ export const Container = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-block: 12rem 38rem;
+  padding-block: 12rem 50rem;
 
   @media only screen and (min-width: 37.5em) {
-    height: 67vh;
+    height: min(70vh, 60rem);
     width: 45rem;
     border-radius: 1rem;
     top: 0;
@@ -44,7 +44,7 @@ export const Container = styled(motion.div)`
     border: none;
     outline: none;
     background-color: transparent;
-    margin-top: 3rem;
+    margin-top: 8rem;
 
     @media only screen and (min-width: 37.5em) {
       grid-column: -1;
@@ -54,12 +54,14 @@ export const Container = styled(motion.div)`
 `;
 
 export const Rules = styled.img`
-  width: 85%;
+  width: min(85%, 35rem);
+  margin-top: 3rem;
 
   @media only screen and (min-width: 37.5em) {
     grid-column: 1 / span 3;
     grid-row: 2;
     width: 100%;
     margin-left: 0.3rem;
+    margin-top: 0;
   }
 `;

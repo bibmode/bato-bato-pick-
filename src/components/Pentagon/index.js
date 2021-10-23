@@ -37,7 +37,7 @@ const Pentagon = ({ getWinner, setChoice, enemy, setComputer }) => {
           opacity: 1,
           transition: {
             type: "spring",
-            stiffness: 40,
+            stiffness: 60,
           },
         },
         exit: {
@@ -64,7 +64,7 @@ const Pentagon = ({ getWinner, setChoice, enemy, setComputer }) => {
           opacity: 1,
           transition: {
             type: "spring",
-            stiffness: 40,
+            stiffness: 60,
           },
         },
         exit: {

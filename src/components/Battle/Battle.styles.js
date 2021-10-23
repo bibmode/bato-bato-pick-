@@ -8,12 +8,12 @@ export const Container = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   color: #eee;
-  margin-top: 8rem;
+  margin-top: 6vh;
   z-index: 100;
   transition: width 0.5s;
 
   @media only screen and (min-width: 37.5em) {
-    margin-top: 5rem;
+    margin-top: 0rem;
   }
 `;
 
@@ -133,7 +133,7 @@ export const PlayerBackdrop = styled(motion.div)`
 
 export const Results = styled(motion.div)`
   width: 100%;
-  margin-top: 8rem;
+  margin-top: 6vh;
 
   @media only screen and (min-width: 37.5em) {
     margin-top: 11rem;
@@ -158,7 +158,8 @@ export const Results = styled(motion.div)`
     padding: 1.5rem 6.5rem;
     border-radius: 1rem;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.3s;
+    z-index: 900;
 
     :hover {
       transform: scale(1.1);

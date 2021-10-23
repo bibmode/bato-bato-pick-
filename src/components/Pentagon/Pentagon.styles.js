@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const Container = styled(motion.div)`
-  width: 100%;
+  width: max(100%, 30rem);
   min-height: 38rem;
   display: flex;
   align-items: center;
@@ -67,10 +67,6 @@ export const Attack = styled(motion.button)`
   outline: none;
   border: none;
   cursor: pointer;
-
-  /* @media only screen and (min-width: 52.7em){
-    width: ;
-  } */
 
   div {
     width: 76%;
