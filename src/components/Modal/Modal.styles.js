@@ -45,6 +45,7 @@ export const Container = styled(motion.div)`
     outline: none;
     background-color: transparent;
     margin-top: 8rem;
+    cursor: pointer;
 
     @media only screen and (min-width: 37.5em) {
       grid-column: -1;

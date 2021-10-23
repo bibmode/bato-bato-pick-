@@ -57,7 +57,7 @@ function App() {
 
   // local storage
   useEffect(() => {
-    window.localStorage.setItem("score", window.JSON.stringify(score));
+    window.localStorage.setItem("score", score);
   }, [score]);
 
   return (
