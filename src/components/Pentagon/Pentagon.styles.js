@@ -11,8 +11,8 @@ export const Container = styled(motion.div)`
 
 export const Wrapper = styled.div`
   position: relative;
-  height: 28rem;
-  width: 30rem;
+  height: clamp(28rem, 42vw, 47rem);
+  width: clamp(30rem, 50vw, 55rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,35 +22,35 @@ export const Wrapper = styled.div`
   }
 
   .spock {
-    left: 0;
-    bottom: 11.5rem;
+    left: 3%;
+    bottom: clamp(11.5rem, 17vw, 19rem);
     background-image: linear-gradient(hsl(189, 58%, 57%), hsl(189, 59%, 53%));
     box-shadow: 0 0.35rem rgba(64, 185, 206, 0.7);
   }
   .scissors {
-    top: 0;
+    top: clamp(-0.1rem, -20vw, -15rem);
     background-image: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
     box-shadow: 0 0.35rem #ff7f00ba;
   }
   .paper {
-    right: 0;
-    bottom: 11.5rem;
+    right: 3%;
+    bottom: clamp(11.5rem, 17vw, 19rem);
     background-image: linear-gradient(hsl(230, 89%, 65%), hsl(230, 89%, 62%));
     box-shadow: 0 0.35rem rgba(72, 101, 244, 0.6);
   }
   .rock {
     bottom: 0;
-    right: 4.5rem;
+    right: clamp(4.5rem, 9vw, 9rem);
     background-image: linear-gradient(hsl(349, 70%, 56%), hsl(349, 71%, 52%));
     box-shadow: 0 0.35rem rgba(220, 46, 78, 0.6);
 
     img {
-      height: 3rem;
+      height: 45%;
     }
   }
   .lizard {
     bottom: 0;
-    left: 4.5rem;
+    left: clamp(4.5rem, 9vw, 9rem);
     background-image: linear-gradient(hsl(261, 72%, 63%), hsl(261, 73%, 60%));
     box-shadow: 0 0.35rem rgba(131, 79, 227, 0.6);
   }
@@ -58,8 +58,8 @@ export const Wrapper = styled.div`
 
 export const Attack = styled(motion.button)`
   position: absolute;
-  width: 9rem;
-  height: 9rem;
+  width: clamp(9rem, 13vw, 15rem);
+  height: clamp(9rem, 13vw, 15rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,6 +67,10 @@ export const Attack = styled(motion.button)`
   outline: none;
   border: none;
   cursor: pointer;
+
+  /* @media only screen and (min-width: 52.7em){
+    width: ;
+  } */
 
   div {
     width: 76%;
@@ -79,7 +83,7 @@ export const Attack = styled(motion.button)`
     box-shadow: inset 0 0.3rem #cbcbcb;
 
     img {
-      height: 3.5rem;
+      height: 50%;
       width: auto;
     }
   }

@@ -1,5 +1,6 @@
 import { Attack, Container, Wrapper } from "./Pentagon.styles";
 import { useHistory } from "react-router-dom";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const attackVariants = {
   tap: {
@@ -13,39 +14,70 @@ const attackVariants = {
   },
 };
 
-const containerVariants = {
-  initial: {
-    x: "100vw",
-    scale: 0.5,
-    opacity: 0,
-  },
-  second: {
-    rotate: [360, 0],
-    x: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 40,
-    },
-  },
-  exit: {
-    x: "-100vw",
-    opacity: 0,
-    scale: [1, 0.8, 1],
-    transition: {
-      duration: 0.8,
-      type: "tween",
-      ease: "backInOut",
-    },
-  },
-};
-
 const Pentagon = ({ getWinner, setChoice, enemy, setComputer }) => {
   const attacks = ["spock", "scissors", "paper", "rock", "lizard"];
   const history = useHistory();
   const randomNum = Math.floor(Math.random() * 5);
   setComputer(attacks[randomNum]);
+
+  const tablet = useMediaQuery("(min-width: 37.5em)");
+
+  const containerVariants = tablet
+    ? {
+        initial: {
+          x: "100vw",
+          scale: 0.5,
+          opacity: 0,
+        },
+        second: {
+          rotate: [360, 0],
+          x: 0,
+          y: 70,
+          scale: 1,
+          opacity: 1,
+          transition: {
+            type: "spring",
+            stiffness: 40,
+          },
+        },
+        exit: {
+          x: "-100vw",
+          opacity: 0,
+          scale: [1, 0.8, 1],
+          transition: {
+            duration: 0.8,
+            type: "tween",
+            ease: "backInOut",
+          },
+        },
+      }
+    : {
+        initial: {
+          x: "100vw",
+          scale: 0.5,
+          opacity: 0,
+        },
+        second: {
+          rotate: [360, 0],
+          x: 0,
+          scale: 1,
+          opacity: 1,
+          transition: {
+            type: "spring",
+            stiffness: 40,
+          },
+        },
+        exit: {
+          x: "-100vw",
+          opacity: 0,
+          scale: [1, 0.8, 1],
+          transition: {
+            duration: 0.8,
+            type: "tween",
+            ease: "backInOut",
+          },
+        },
+      };
 
   return (
     <Container
