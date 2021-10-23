@@ -9,6 +9,7 @@ export const Container = styled(motion.div)`
   height: 10rem;
   position: fixed;
   bottom: 5rem;
+  z-index: 700;
 
   @media only screen and (min-width: 37.5em) {
     width: fit-content;

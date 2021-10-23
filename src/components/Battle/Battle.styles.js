@@ -89,8 +89,6 @@ export const Attack = styled(motion.div)`
   border: none;
   z-index: 300;
 
-  /* @media only screen and(max-width: ) */
-
   .image {
     width: 76%;
     height: 76%;

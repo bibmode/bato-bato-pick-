@@ -117,7 +117,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      separate={showResults ? "100rem" : "70rem"}
+      separate={showResults ? "100rem" : "75rem"}
     >
       <PickWrapper>
         <Pick>
