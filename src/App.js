@@ -28,6 +28,7 @@ function App() {
   };
 
   const scoreTally = (champ) => {
+    window.localStorage.setItem("score", JSON.stringify(score));
     setWinner(champ);
     setTimeout(() => {
       champ === 1
@@ -39,8 +40,6 @@ function App() {
   };
 
   const getWinner = (pick, enemy) => {
-    window.localStorage.setItem("score", JSON.stringify(score));
-
     if (pick === enemy) {
       setWinner(3);
     } else if (pick === "spock" && (enemy === "scissors" || enemy === "rock"))
