@@ -7,7 +7,6 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import Battle from "./components/Battle";
 import { AnimatePresence } from "framer-motion";
-// import { useEffect } from "react/cjs/react.development";
 import Background from "./components/Background";
 
 function App() {
@@ -40,6 +39,8 @@ function App() {
   };
 
   const getWinner = (pick, enemy) => {
+    window.localStorage.setItem("score", JSON.stringify(score));
+
     if (pick === enemy) {
       setWinner(3);
     } else if (pick === "spock" && (enemy === "scissors" || enemy === "rock"))
@@ -53,14 +54,7 @@ function App() {
     else if (pick === "lizard" && (enemy === "spock" || enemy === "paper"))
       scoreTally(1);
     else scoreTally(2);
-
-    window.localStorage.setItem("score", JSON.stringify(score));
   };
-
-  // local storage
-  // useEffect(() => {
-  //   window.localStorage.setItem("score", JSON.stringify(score));
-  // }, [score]);
 
   return (
     <div className="App">
