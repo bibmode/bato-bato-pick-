@@ -51,23 +51,23 @@ export const Pick = styled(motion.div)`
 
   .spock {
     background-image: linear-gradient(hsl(189, 58%, 57%), hsl(189, 59%, 53%));
-    box-shadow: 0 0.35rem rgba(64, 185, 206, 0.7);
+    box-shadow: 0 clamp(0.35rem, 1vw, 1.2rem) rgba(64, 185, 206, 0.7);
   }
   .scissors {
     background-image: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
-    box-shadow: 0 0.35rem #ff7f00ba;
+    box-shadow: 0 clamp(0.35rem, 1vw, 1.2rem) #ff7f00ba;
   }
   .paper {
     background-image: linear-gradient(hsl(230, 89%, 65%), hsl(230, 89%, 62%));
-    box-shadow: 0 0.35rem rgba(72, 101, 244, 0.6);
+    box-shadow: 0 clamp(0.35rem, 1vw, 1.2rem) rgba(72, 101, 244, 0.6);
   }
   .rock {
     background-image: linear-gradient(hsl(349, 70%, 56%), hsl(349, 71%, 52%));
-    box-shadow: 0 0.35rem rgba(220, 46, 78, 0.6);
+    box-shadow: 0 clamp(0.35rem, 1vw, 1.2rem) rgba(220, 46, 78, 0.6);
   }
   .lizard {
     background-image: linear-gradient(hsl(261, 72%, 63%), hsl(261, 73%, 60%));
-    box-shadow: 0 0.35rem rgba(131, 79, 227, 0.6);
+    box-shadow: 0 clamp(0.35rem, 1vw, 1.2rem) rgba(131, 79, 227, 0.6);
   }
 `;
 
@@ -97,7 +97,7 @@ export const Attack = styled(motion.div)`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: inset 0 0.3rem #cbcbcb;
+    box-shadow: inset 0 clamp(0.3rem, 1vw, 0.8rem) #cbcbcb;
 
     img {
       height: 50%;
@@ -157,5 +157,11 @@ export const Results = styled(motion.div)`
     outline: none;
     padding: 1.5rem 6.5rem;
     border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    :hover {
+      transform: scale(1.1);
+    }
   }
 `;
