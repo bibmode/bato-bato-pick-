@@ -11,7 +11,7 @@ import { useEffect } from "react/cjs/react.development";
 import Background from "./components/Background";
 
 function App() {
-  const localScore = Number(localStorage.getItem("score"));
+  const localScore = Number(window.localStorage.getItem("score"));
   const choices = ["spock", "scissors", "paper", "rock", "lizard"];
   const [score, setScore] = useState(localScore ? localScore : 0);
   const [modal, setModal] = useState(false);
@@ -57,7 +57,7 @@ function App() {
 
   // local storage
   useEffect(() => {
-    window.localStorage.setItem("score", score);
+    window.localStorage.setItem("score", JSON.stringify(score));
   }, [score]);
 
   return (
