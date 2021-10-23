@@ -32,7 +32,7 @@ const Pentagon = ({ getWinner, setChoice, enemy, setComputer }) => {
         second: {
           rotate: [360, 0],
           x: 0,
-          y: 70,
+          y: "min(6vh, 8rem)",
           scale: 1,
           opacity: 1,
           transition: {

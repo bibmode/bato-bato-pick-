@@ -10,6 +10,9 @@ const containerVariants = {
   },
   exit: {
     opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
   },
 };
 
@@ -20,6 +23,7 @@ const Background = ({ showModal }) => {
         variants={containerVariants}
         initial="initial"
         animate="animate"
+        exit="exit"
         onClick={() => showModal()}
       />
     </AnimatePresence>

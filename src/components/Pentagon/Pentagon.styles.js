@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
     box-shadow: 0 clamp(0.35rem, 1vw, 0.6rem) rgba(64, 185, 206, 0.7);
   }
   .scissors {
-    top: clamp(-0.1rem, -20vw, -15rem);
+    top: clamp(-2rem, -20vw, -14rem);
     background-image: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
     box-shadow: 0 clamp(0.35rem, 1vw, 0.6rem) #ff7f00ba;
   }
