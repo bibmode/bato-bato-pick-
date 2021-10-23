@@ -53,12 +53,14 @@ function App() {
     else if (pick === "lizard" && (enemy === "spock" || enemy === "paper"))
       scoreTally(1);
     else scoreTally(2);
+
+    window.localStorage.setItem("score", JSON.stringify(score));
   };
 
   // local storage
-  useEffect(() => {
-    window.localStorage.setItem("score", score);
-  }, [score]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("score", JSON.stringify(score));
+  // }, [score]);
 
   return (
     <div className="App">
