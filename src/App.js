@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import Battle from "./components/Battle";
 import { AnimatePresence } from "framer-motion";
-// import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react/cjs/react.development";
 import Background from "./components/Background";
 
 function App() {
@@ -29,8 +29,6 @@ function App() {
   };
 
   const scoreTally = (champ) => {
-    window.localStorage.setItem("score", JSON.stringify(score));
-
     setWinner(champ);
     setTimeout(() => {
       champ === 1
@@ -58,9 +56,9 @@ function App() {
   };
 
   // local storage
-  // useEffect(() => {
-  //   window.localStorage.setItem("score", JSON.stringify(score));
-  // }, [score]);
+  useEffect(() => {
+    window.localStorage.setItem("score", window.JSON.stringify(score));
+  }, [score]);
 
   return (
     <div className="App">
