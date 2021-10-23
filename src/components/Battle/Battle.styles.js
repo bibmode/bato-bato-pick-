@@ -3,13 +3,18 @@ import { motion } from "framer-motion";
 
 export const Container = styled(motion.div)`
   height: auto;
-  width: 100%;
+  width: min(100%, ${(props) => props.separate});
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #eee;
-  margin-top: 5rem;
+  margin-top: 8rem;
   z-index: 100;
+  transition: width 0.5s;
+
+  @media only screen and (min-width: 37.5em) {
+    margin-top: 5rem;
+  }
 `;
 
 export const PickWrapper = styled(motion.div)`
@@ -24,8 +29,11 @@ export const Pick = styled(motion.div)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-inline: -1rem -1.5rem;
   position: relative;
+
+  @media only screen and (min-width: 37.5em) {
+    top: 40%;
+  }
 
   h3 {
     margin-top: 2rem;
@@ -33,6 +41,12 @@ export const Pick = styled(motion.div)`
     letter-spacing: 1.5px;
     font-size: 1.6rem;
     z-index: 100;
+
+    @media only screen and (min-width: 37.5em) {
+      position: absolute;
+      top: -10rem;
+      font-size: 2.4rem;
+    }
   }
 
   .spock {
@@ -65,8 +79,8 @@ export const AttackDiv = styled(motion.div)`
 `;
 
 export const Attack = styled(motion.div)`
-  width: 13rem;
-  height: 13rem;
+  width: clamp(13rem, 30vw, 30rem);
+  height: clamp(13rem, 30vw, 30rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,6 +88,8 @@ export const Attack = styled(motion.div)`
   outline: none;
   border: none;
   z-index: 300;
+
+  /* @media only screen and(max-width: ) */
 
   .image {
     width: 76%;
@@ -86,15 +102,15 @@ export const Attack = styled(motion.div)`
     box-shadow: inset 0 0.3rem #cbcbcb;
 
     img {
-      height: 5rem;
+      height: 50%;
       width: auto;
     }
   }
 `;
 
 export const Plate = styled(motion.div)`
-  width: 13rem;
-  height: 13rem;
+  width: clamp(13rem, 30vw, 30rem);
+  height: clamp(13rem, 30vw, 30rem);
   border-radius: 50%;
   background-color: rgba(20, 21, 57, 0.5);
 `;
@@ -119,7 +135,15 @@ export const PlayerBackdrop = styled(motion.div)`
 
 export const Results = styled(motion.div)`
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 8rem;
+
+  @media only screen and (min-width: 37.5em) {
+    margin-top: 11rem;
+  }
+
+  @media only screen and (min-width: 50em) {
+    margin-top: -12%;
+  }
 
   h2 {
     font-size: 5.8rem;

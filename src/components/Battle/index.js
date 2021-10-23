@@ -109,7 +109,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
 
   setTimeout(() => {
     setShowResults(true);
-  }, 2300);
+  }, 1700);
 
   return (
     <Container
@@ -117,6 +117,7 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      separate={showResults ? "100rem" : "70rem"}
     >
       <PickWrapper>
         <Pick>
@@ -141,20 +142,16 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                   <PlayerBackdrop
                     key={1}
                     variants={backVariants}
-                    size="17rem"
+                    size="150%"
                     className="first"
                   />
                   <PlayerBackdrop
                     key={2}
                     variants={backVariants}
-                    size="22rem"
+                    size="200%"
                     className="second"
                   />
-                  <PlayerBackdrop
-                    key={3}
-                    variants={backVariants}
-                    size="28rem"
-                  />
+                  <PlayerBackdrop key={3} variants={backVariants} size="250%" />
                 </Backdrop>
               )}
             </AttackDiv>
@@ -186,20 +183,16 @@ const Battle = ({ user, computer, winner, setPentagon }) => {
                   <PlayerBackdrop
                     key={4}
                     variants={backVariants}
-                    size="17rem"
+                    size="150%"
                     className="first"
                   />
                   <PlayerBackdrop
                     key={5}
                     variants={backVariants}
-                    size="22rem"
+                    size="200%"
                     className="second"
                   />
-                  <PlayerBackdrop
-                    key={6}
-                    variants={backVariants}
-                    size="28rem"
-                  />
+                  <PlayerBackdrop key={6} variants={backVariants} size="250%" />
                 </Backdrop>
               )}
             </AttackDiv>
