@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Pentagon from "./components/Pentagon";
 import Rules from "./components/Rules";
 import Modal from "./components/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Battle from "./components/Battle";
 import { AnimatePresence } from "framer-motion";
 import Background from "./components/Background";
@@ -23,12 +23,15 @@ function App() {
 
   const location = useLocation();
 
+  useEffect(() => {
+    window.localStorage.setItem("score", JSON.stringify(score));
+  }, [score]);
+
   const showModal = () => {
     setModal(!modal);
   };
 
   const scoreTally = (champ) => {
-    window.localStorage.setItem("score", JSON.stringify(score));
     setWinner(champ);
     setTimeout(() => {
       champ === 1
