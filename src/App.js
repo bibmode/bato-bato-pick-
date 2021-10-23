@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import Battle from "./components/Battle";
 import { AnimatePresence } from "framer-motion";
-import { useEffect } from "react/cjs/react.development";
+// import { useEffect } from "react/cjs/react.development";
 import Background from "./components/Background";
 
 function App() {
